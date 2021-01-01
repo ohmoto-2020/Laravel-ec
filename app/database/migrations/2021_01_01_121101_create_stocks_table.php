@@ -16,6 +16,10 @@ class CreateStocksTable extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('name','100');//100文字以内のnameカラム
+            $table->string('detail','500');//500文字以内のdetailカラム
+            $table->integer('fee');
+            $table->string('imgpath','200');//200文字以内のimgpathカラム
         });
     }
 
