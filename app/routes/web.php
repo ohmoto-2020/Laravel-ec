@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', 'ShopController@index');
 // Route::get('/', function () {
-//     return view('welcome');
-// });
+  //     return view('welcome');
+  // });
 
-Auth::routes();
 
+Route::get('/', 'ShopController@index');
 Route::get('/mycart', 'ShopController@myCart')->middleware('auth');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/mycart', 'ShopController@addMycart');
+Auth::routes();
